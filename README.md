@@ -47,15 +47,14 @@ Functionalities achieved are as follows:
 
 ## While implementing/recommending the solution how will you ensure that there is no data in plain text during transit?
 
-![image](https://github.com/anusha-xox/smartbill-gh/assets/75865099/15b70e92-9188-4fdf-b341-18b465652fbe)
-
-
 - HTTPS (SSL/TLS): All communication between the User/Client, Frontend/UI, and Backend tiers should be encrypted using HTTPS (Hypertext Transfer Protocol Secure) with SSL/TLS (Secure Sockets Layer/Transport Layer Security) protocols. This ensures that data transmitted between the different tiers is encrypted, preventing eavesdropping and unauthorized access.
 - Database Connection Encryption: When connecting to the database from the Backend tier, ensure that the connection is encrypted.
 - Input Data Sanitization: Implement thorough input data sanitization at the Frontend/UI and Backend tiers to prevent common web vulnerabilities like cross-site scripting (XSS).
 - Use of Secure APIs: Implement secure RESTful APIs between the Frontend/UI and Backend tiers to ensure that data exchanged is protected and secure.
 
 ## Given that we only have 1 public IP available. Can you design a Secure system efficiently which would be accessible to users from the internet? (hint: you can make use private IP address space)
+
+![image](https://github.com/anusha-xox/smartbill-gh/assets/75865099/15b70e92-9188-4fdf-b341-18b465652fbe)
 
 - Internet: Represents the public internet through which users access the SmartBill application. Firewall: Acts as the first line of defense, protecting the system from unauthorized access and malicious traffic. It allows only necessary incoming and outgoing traffic based on configured rules.
 - Reverse Proxy: The Reverse Proxy, placed in the DMZ (Demilitarized Zone), is assigned the public IP address. It receives and forwards incoming requests from the internet to the backend server.
