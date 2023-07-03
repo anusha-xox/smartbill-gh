@@ -1,10 +1,10 @@
 # smartbill-gh
 
-##Brief summary
+## Brief summary
 
 SmartBill is a cutting-edge fintech application that aims to revolutionize the billing and payment process in medium/big retail shops, ensuring a seamless, efficient, and secure transaction experience for both retailers and customers. By combining a barcode scanner with bill generation features and a 2-way Request-to-Pay solution, SmartBill creates an all-in-one platform that simplifies the billing process while providing enhanced security measures to prevent fraud. SmartBill is the ultimate solution to transform the retail shopping landscape and establish a more secure, portable and accountable payment ecosystem.
 
-##Problem Statement
+## Problem Statement
 
 In traditional retail shops, the billing process often involves multiple devices and lacks an integrated solution. Additionally, smaller merchants face the risk of payment fraud due to fake payment confirmations, leading to financial losses and trust issues. Though a lot of the shops these days consist of speakers that announce the price paid as soon as the transaction is completed, this is not a very secure method, especially for smaller merchants who often get scammed due to the issues mentioned. There is a need for a comprehensive, user-friendly, and secure application that streamlines billing, tracks products, and ensures genuine payments.
 
@@ -17,16 +17,16 @@ The application enables retailers to keep track of products sold, inventory, and
 The 2-way Request-to-Pay solution ensures secure and transparent transactions, eliminating payment fraud risks and providing peace of mind to both sellers and buyers.
 Customers receive detailed information about their purchases, including itemized bills, shop location, and merchant details, facilitating smoother financial management and record-keeping.
 Trust and Accountability: SmartBill builds trust between sellers and buyers, creating a sense of accountability for both parties and fostering a positive shopping experience.
-##How would you implement a system of fintech application which fulfills all the above criterias mentioned?
+## How would you implement a system of fintech application which fulfills all the above criterias mentioned?
 
-#User/Client: Represents various user/client devices like smartphones, web browsers, or point-of-sale systems used by retailers.
+# User/Client: Represents various user/client devices like smartphones, web browsers, or point-of-sale systems used by retailers.
 
-#Frontend/UI:
+# Frontend/UI:
 
 Web Server: Serves the frontend application to the user/client devices.
 Mobile App: Provides a user-friendly mobile interface for retailers.
 Point-of-Sale Interface: Interfaces with the point-of-sale system used by retailers to integrate SmartBill functionalities.
-#Backend:
+# Backend:
 
 Application Server: Handles the business logic, data processing, and API requests from the frontend/UI.
 Business Logic: Implements the core functionalities of SmartBill, including barcode scanning, bill generation, and 2-way Request-to-Pay mechanism.
@@ -41,7 +41,7 @@ Bill Generation: The captured barcode is sent to the backend, where the business
 2-Way Request-to-Pay: The seller initiates a payment request to the buyer using the backend's Request-to-Pay mechanism. The request includes the total amount and the buyer's UPI ID or phone number.
 Buyer Approval: The buyer receives the payment request on their device and approves it through the frontend/UI. The approval triggers the completion of the transaction.
 Transaction Record and Tracking: The backend stores transaction details, including payment status, timestamp, buyer and seller information, and itemized bill data, in the database. This allows retailers to track sales, monitor inventory, and access historical transaction records.
-##While implementing/recommending the solution how will you ensure that there is no data in plain text during transit?
+## While implementing/recommending the solution how will you ensure that there is no data in plain text during transit?
 
 HTTPS (SSL/TLS): All communication between the User/Client, Frontend/UI, and Backend tiers should be encrypted using HTTPS (Hypertext Transfer Protocol Secure) with SSL/TLS (Secure Sockets Layer/Transport Layer Security) protocols. This ensures that data transmitted between the different tiers is encrypted, preventing eavesdropping and unauthorized access.
 
@@ -51,13 +51,13 @@ Input Data Sanitization: Implement thorough input data sanitization at the Front
 
 Use of Secure APIs: Implement secure RESTful APIs between the Frontend/UI and Backend tiers to ensure that data exchanged is protected and secure.
 
-##Given that we only have 1 public IP available. Can you design a Secure system efficiently which would be accessible to users from the internet? (hint: you can make use private IP address space)
+## Given that we only have 1 public IP available. Can you design a Secure system efficiently which would be accessible to users from the internet? (hint: you can make use private IP address space)
 
 Internet: Represents the public internet through which users access the SmartBill application. Firewall: Acts as the first line of defense, protecting the system from unauthorized access and malicious traffic. It allows only necessary incoming and outgoing traffic based on configured rules. Reverse Proxy: The Reverse Proxy, placed in the DMZ (Demilitarized Zone), is assigned the public IP address. It receives and forwards incoming requests from the internet to the backend server.
 
 Here, all incoming requests from the internet hit the Reverse Proxy. The Reverse Proxy is configured to forward appropriate requests to the backend server within the private IP address space. As the Reverse Proxy forwards the requests to the backend server, it performs Network Address Translation (NAT) to replace the private IP with the public IP address. This ensures that the backend server's private IP is not exposed to the internet. The firewall is configured to allow only necessary incoming traffic, such as HTTP/HTTPS requests to the Reverse Proxy and necessary outbound traffic, like database connections.
 
-##How will you keep the Operating system security packages up to date?
+## How will you keep the Operating system security packages up to date?
 
 The best method to keep operating system security packages up to date in SmartBill is to enable automated updates. By configuring the operating system to automatically download and install security patches, we ensure a proactive approach to maintaining the system's security.
 Regularly monitoring vendor notifications and security mailing lists helps stay informed about the latest patches and vulnerabilities.
